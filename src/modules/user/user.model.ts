@@ -24,6 +24,7 @@ const userSchema = new Schema<UserType>(
 				message: 'Enter a valid mobile phone number',
 			},
 			unique: true,
+			sparse: true,
 		},
 		photo: {
 			type: String,
