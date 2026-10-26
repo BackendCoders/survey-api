@@ -1,9 +1,11 @@
 import 'module-alias/register';
 import app from './app';
 import { connectDB } from './config/db';
+import { syncIndexes } from './config/indexes';
 
 const startServer = async () => {
 	await connectDB();
+	await syncIndexes();
 	const port = process.env.PORT || 5000;
 
 	app.listen(port, () => {
